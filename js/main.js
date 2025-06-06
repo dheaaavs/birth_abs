@@ -132,13 +132,13 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener('DOMContentLoaded', () => {
   const hour = new Date().getHours();
   const body = document.body;
-  
+
   if (hour >= 6 && hour < 18) {
-    body.style.background = "linear-gradient(to bottom, #a1c4fd, #c2e9fb)";
-    body.style.color = "#0a2463"; // navy
+    body.classList.add('day');
+    body.classList.remove('night');
   } else {
-    body.style.background = "linear-gradient(to bottom, #2c3e50, #4ca1af)";
-    body.style.color = "#f1f1f1"; // terang (putih ke abu muda)
+    body.classList.add('night');
+    body.classList.remove('day');
   }
 });
 

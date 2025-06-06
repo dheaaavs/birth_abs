@@ -1,22 +1,60 @@
 body {
-  background-color: #ffe6f0;
-  font-family: 'Comic Sans MS', cursive;
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
   padding: 50px;
-  transition: background 0.5s ease;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.day {
+  background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+  color: #0a2463;
+}
+
+body.night {
+  background: linear-gradient(to bottom, #2c3e50, #4ca1af);
+  color: #f1f1f1;
 }
 
 h1 {
-  color: #ff3399;
-  font-size: 3em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+}
+
+#typed, #display-reply, p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2em;
+  line-height: 1.7;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+#pelukModal .content h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5em;
+  color: #774fe7;
   margin-bottom: 20px;
 }
 
-#typed {
-  color: #ff3399;
-  font-size: 1.5em;
-  height: 50px;
-  margin-bottom: 30px;
+.my-sweetalert {
+  font-family: 'Caveat', cursive;
+  font-size: 1.3em;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #774fe7;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5e3ecb;
 }
 
 /* Swiper */
@@ -35,20 +73,6 @@ h1 {
   object-fit: cover;
 }
 
-button {
-  padding: 15px 30px;
-  font-size: 1.2em;
-  background-color: #ff3399;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #e60073;
-}
-
 /* Love Rain Animation */
 #love-rain {
   position: fixed;
@@ -56,7 +80,7 @@ button:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* biar gak ganggu klik */
+  pointer-events: none;
   overflow: visible;
   z-index: 9999;
 }
@@ -65,6 +89,7 @@ button:hover {
   0% { transform: translateY(-10vh); opacity: 1; }
   100% { transform: translateY(110vh); opacity: 0; }
 }
+
 .heart {
   position: fixed;
   top: -10vh;
@@ -76,10 +101,10 @@ button:hover {
   user-select: none;
 }
 
-/* Reply display */
-#display-reply {
+/* Countdown */
+#countdown {
+  margin-top: 20px;
   font-size: 1.1em;
-  margin-top: 10px;
 }
 
 /* Responsive */
@@ -97,34 +122,4 @@ button:hover {
   .swiper {
     height: 200px;
   }
-}
-
-h1{
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  color: #2c3e50; /* warna navy gelap yang adem */
-  font-size: 2em;
-  margin-bottom: 20px;
-  letter-spacing: 1.5px;
-}
-
-#typed, #display-reply, p {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1.2em;
-  color: #34495e; /* biru gelap ke abu yang adem */
-  line-height: 1.7;
-  margin: 20px auto;
-  max-width: 600px;
-}
-
-#pelukModal .content h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.5em;
-  color: #774fe7;
-  margin-bottom: 20px;
-}
-
-.my-sweetalert {
-  font-family: 'Caveat', cursive;
-  font-size: 1.2em;
 }
