@@ -103,7 +103,7 @@ h1{
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   color: #2c3e50; /* warna navy gelap yang adem */
-  font-size: 3.5em;
+  font-size: 2em;
   margin-bottom: 20px;
   letter-spacing: 1.5px;
 }
@@ -122,4 +122,9 @@ h1{
   font-size: 2.5em;
   color: #774fe7;
   margin-bottom: 20px;
+}
+
+.my-sweetalert {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2em;
 }
