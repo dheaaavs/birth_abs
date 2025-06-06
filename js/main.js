@@ -47,13 +47,19 @@ function showSurprise() {
     index++;
   } else {
     Swal.fire({
-      title: '🎉🎉🎉',
-      text: 'Peluk aku sekarang dong 🤭❤️',
-      icon: 'info',
-      confirmButtonText: 'Siap Sayang 😘'
+    title: '🎉🎉🎉',
+    text: 'Peluk aku sekarang dong 🤭❤️',
+    icon: 'info',
+    confirmButtonText: 'Siap Sayang 😘'
+    }).then(() => {
+    // Simpan posisi lagu saat ini ke localStorage
+    var audio = document.getElementById("bg-music");
+    localStorage.setItem("songTime", audio.currentTime);
+    window.location.href = "peluk.html";
     });
   }
 }
+
 
 // Love Rain animation
 function createHeart() {
@@ -97,33 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
     Swal.fire({
       title: 'Surprise!',
       text: 'Hadiah spesial untuk kamu sayang 💝',
-      imageUrl: 'assets/gift-inside.png',
+      imageUrl: 'assets/images.png',
       imageWidth: 200,
       imageHeight: 200,
       confirmButtonText: 'Makasih sayang!'
     });
   });
 });
-
-// Save Reply to localStorage
-function saveReply() {
-  const message = document.getElementById('reply').value;
-  if (message.trim() === '') {
-    alert('Isi pesannya dulu ya sayang 😊');
-    return;
-  }
-  localStorage.setItem('pesanDariPacar', message);
-  alert('Pesan tersimpan, makasih sayang! ❤️');
-  displayReply();
-}
-
-// Display reply on page
-function displayReply() {
-  const pesan = localStorage.getItem('pesanDariPacar');
-  if (pesan) {
-    document.getElementById('display-reply').textContent = `Pesan dari kamu: ${pesan}`;
-  }
-}
 
 // Display reply saat load
 document.addEventListener('DOMContentLoaded', displayReply);
