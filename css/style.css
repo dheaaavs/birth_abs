@@ -1,0 +1,100 @@
+body {
+  background-color: #ffe6f0;
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+  padding: 50px;
+  transition: background 0.5s ease;
+}
+
+h1 {
+  color: #ff3399;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+#typed {
+  color: #ff3399;
+  font-size: 1.5em;
+  height: 50px;
+  margin-bottom: 30px;
+}
+
+/* Swiper */
+.swiper {
+  width: 90%;
+  height: 300px;
+  margin: 30px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #ff3399;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e60073;
+}
+
+/* Love Rain Animation */
+#love-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* biar gak ganggu klik */
+  overflow: visible;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10vh); opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+.heart {
+  position: fixed;
+  top: -10vh;
+  font-size: 24px;
+  color: red;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  user-select: none;
+}
+
+/* Reply display */
+#display-reply {
+  font-size: 1.1em;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  button {
+    font-size: 1em;
+    padding: 12px 24px;
+  }
+  .swiper {
+    height: 200px;
+  }
+}
