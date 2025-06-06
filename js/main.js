@@ -1,13 +1,13 @@
 // Typed.js init
 var typed = new Typed('#typed', {
   strings: [
-    "Aku punya kejutan buat kamu 😊",
     "Semoga hari ini seindah senyum kamu 💖",
-    "Aku sayang kamu lebih dari kata-kata 😘"
+    "God Bless U Sayang",
   ],
   typeSpeed: 50,
   backSpeed: 30,
-  loop: true
+  loop: true,
+  showCursor: false
 });
 
 // Confetti function
@@ -22,9 +22,7 @@ function startConfetti() {
 // Pesan SweetAlert2
 const messages = [
   "Selamat ulang tahun my captain ❤️",
-  "Semoga semua impian kamu tercapai ✨",
-  "Tetap jadi kamu yang manis & baik 😘",
-  "Terima kasih udah hadir di hidup aku 🥰",
+  "Thank you udah hadir di hidup aku 🥰",
   "I love you more everyday 💖"
 ];
 let index = 0;
@@ -111,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startConfetti();
     Swal.fire({
       title: 'Surprise!',
-      text: 'Hadiah spesial untuk kamu sayang 💝',
+      text: 'Happy birthday, sayang! 🎉🥳 Gak nyangka ya, kamu udah tambah tua lagi setahun, tapi tenang, kamu masih tetep ganteng kok di mataku, walaupun kadang nyebelin! 😜 Aku bersyukur banget punya kamu, yang selalu bikin hari-hariku penuh warna, penuh tawa, dan kadang bikin aku darah tinggi juga. Semoga di umur yang baru ini kamu makin sehat, makin sukses, dan makin sayang sama aku (ini penting! 😘). Aku bakal terus nemenin kamu sampe kamu nemu pertner seiman kamu yaa, aku bisa jadi partner in crime, temen curhat kamu juga. Pokoknya, aku sayang kamu banget. Terima kasih udah jadi orang yang paling spesial dalam hidup aku. Yuk, kita rayain ulang tahunmu dengan cara yang paling gokil dan berkesan! Love you to the moon and back! 💖🎂🎈',
       imageUrl: 'assets/images.png',
       imageWidth: 200,
       imageHeight: 200,
@@ -139,3 +137,16 @@ document.addEventListener('DOMContentLoaded', () => {
     body.style.background = "linear-gradient(to bottom, #2c3e50, #4ca1af)";
   }
 });
+
+function updateCountdown() {
+  const now = new Date();
+  const nextBirthday = new Date(now.getFullYear(), 6, 23); // 23 Juli tahun ini
+  // Kalau ultah-nya udah lewat tahun ini, set ke tahun depan
+  if (now > nextBirthday) {
+    nextBirthday.setFullYear(now.getFullYear() + 1);
+  }
+  const diff = nextBirthday - now;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById('countdown').innerText = `🎂 ${days} hari lagi ke ultah kamu!`;
+}
+setInterval(updateCountdown, 1000);

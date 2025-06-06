@@ -1,19 +1,31 @@
+/* Import font Google Fonts (tambahkan ini di bagian <head> HTML) */
+/* <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> */
+
 body {
-  background-color: #ffe6f0;
+  background-color: #e0f7fa; /* background lembut biru muda */
   font-family: 'Comic Sans MS', cursive;
   text-align: center;
   padding: 50px;
   transition: background 0.5s ease;
 }
 
+h1, #typed, button {
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 2px;
+  color: #00fff7; /* neon cyan */
+  text-shadow:
+    0 0 5px #00fff7,
+    0 0 10px #00cfd7,
+    0 0 20px #00b2ba,
+    0 0 40px #009494;
+}
+
 h1 {
-  color: #ff3399;
   font-size: 3em;
   margin-bottom: 20px;
 }
 
 #typed {
-  color: #ff3399;
   font-size: 1.5em;
   height: 50px;
   margin-bottom: 30px;
@@ -38,15 +50,17 @@ h1 {
 button {
   padding: 15px 30px;
   font-size: 1.2em;
-  background-color: #ff3399;
-  color: white;
+  background-color: #00fff7;
+  color: black;
   border: none;
   border-radius: 12px;
   cursor: pointer;
+  /* Font sudah diganti di atas */
 }
 
 button:hover {
-  background-color: #e60073;
+  background-color: #00cfd7;
+  color: white;
 }
 
 /* Love Rain Animation */
@@ -65,11 +79,12 @@ button:hover {
   0% { transform: translateY(-10vh); opacity: 1; }
   100% { transform: translateY(110vh); opacity: 0; }
 }
+
 .heart {
   position: fixed;
   top: -10vh;
   font-size: 24px;
-  color: red;
+  color: #00fff7;
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
