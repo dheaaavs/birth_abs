@@ -19,7 +19,7 @@ function startConfetti() {
   });
 }
 
-// SweetAlert2 messages
+// Pesan SweetAlert2
 const messages = [
   "Selamat ulang tahun my captain ❤️",
   "Semoga semua impian kamu tercapai ✨",
@@ -27,16 +27,16 @@ const messages = [
   "Terima kasih udah hadir di hidup aku 🥰",
   "I love you more everyday 💖"
 ];
-
 let index = 0;
 
+// Tampilkan surprise dan modal peluk
 function showSurprise() {
-  // Mainkan musik kalau belum main
-  var audio = document.getElementById("bg-music");
+  const audio = document.getElementById("bg-music");
   if (audio.paused) {
     audio.play();
   }
   startConfetti();
+
   if (index < messages.length) {
     Swal.fire({
       title: '💌 Pesan Buat Kamu',
@@ -47,19 +47,30 @@ function showSurprise() {
     index++;
   } else {
     Swal.fire({
-    title: '🎉🎉🎉',
-    text: 'Peluk aku sekarang dong 🤭❤️',
-    icon: 'info',
-    confirmButtonText: 'Siap Sayang 😘'
+      title: '🎉🎉🎉',
+      text: 'Peluk aku sekarang dong 🤭❤️',
+      icon: 'info',
+      confirmButtonText: 'Siap Sayang 😘'
     }).then(() => {
-    // Simpan posisi lagu saat ini ke localStorage
-    var audio = document.getElementById("bg-music");
-    localStorage.setItem("songTime", audio.currentTime);
-    window.location.href = "peluk.html";
+      localStorage.setItem("songTime", audio.currentTime);
+      showPelukModal();
     });
   }
 }
 
+// Tampilkan modal peluk
+function showPelukModal() {
+  const modal = document.getElementById('pelukModal');
+  modal.style.display = 'block';
+  modal.setAttribute('aria-hidden', 'false');
+}
+
+// Tutup modal peluk
+function closePeluk() {
+  const modal = document.getElementById('pelukModal');
+  modal.style.display = 'none';
+  modal.setAttribute('aria-hidden', 'true');
+}
 
 // Love Rain animation
 function createHeart() {
@@ -70,10 +81,8 @@ function createHeart() {
   heart.textContent = '💖';
   document.getElementById('love-rain').appendChild(heart);
 
-  // Hapus element setelah animasi selesai supaya gak numpuk
   setTimeout(() => heart.remove(), 5000);
 }
-// Generate hati tiap 300ms
 setInterval(createHeart, 300);
 
 // Swiper init
@@ -111,13 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Display reply saat load
-document.addEventListener('DOMContentLoaded', displayReply);
-
 // Background Music autoplay fix
 document.addEventListener("DOMContentLoaded", function() {
-  var audio = document.getElementById("bg-music");
-  audio.play().catch(function(error){
+  const audio = document.getElementById("bg-music");
+  audio.play().catch(() => {
     console.log("Autoplay ditolak browser, akan diputar saat klik tombol.");
   });
 });
@@ -128,11 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
 
   if (hour >= 6 && hour < 18) {
-    // Siang cerah
     body.style.background = "linear-gradient(to bottom, #a1c4fd, #c2e9fb)";
   } else {
-    // Malam gelap
     body.style.background = "linear-gradient(to bottom, #2c3e50, #4ca1af)";
-    // Kamu bisa tambahkan animasi bintang di sini kalau mau
   }
 });
