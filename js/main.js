@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
       text: 'Happy birthday, sayang! 🎉🥳 Gak nyangka ya, kamu udah tambah tua lagi setahun, tapi tenang, kamu masih tetep ganteng kok di mataku, walaupun kadang nyebelin! 😜 Aku bersyukur banget punya kamu, yang selalu bikin hari-hariku penuh warna, penuh tawa, dan kadang bikin aku darah tinggi juga. Semoga di umur yang baru ini kamu makin sehat, makin sukses, dan makin sayang sama aku (ini penting! 😘). Aku bakal terus nemenin kamu sampe kamu nemu pertner seiman kamu yaa, aku bisa jadi partner in crime, temen curhat kamu juga. Pokoknya, aku sayang kamu banget. Terima kasih udah jadi orang yang paling spesial dalam hidup aku. Yuk, kita rayain ulang tahunmu dengan cara yang paling gokil dan berkesan! Love you to the moon and back! 💖🎂🎈',
       customClass: {
       popup: 'my-sweetalert'},
-      imageUrl: 'assets/images.png',
-      imageWidth: 200,
+      imageUrl: 'assets/wowo.jpg',
+      imageWidth: 280,
       imageHeight: 200,
       confirmButtonText: 'Makasih sayang!'
     });
