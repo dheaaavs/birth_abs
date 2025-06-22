@@ -102,16 +102,24 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// Virtual Gift Click Event
 document.addEventListener('DOMContentLoaded', () => {
   const giftBox = document.getElementById('gift-box');
   giftBox.addEventListener('click', () => {
     startConfetti();
     Swal.fire({
       title: 'Surprise!',
-      text: 'Happy birthday, sayang! 🎉🥳 Gak nyangka ya, kamu udah tambah tua lagi setahun, tapi tenang, kamu masih tetep ganteng kok di mataku, walaupun kadang nyebelin! 😜 Aku bersyukur banget punya kamu, yang selalu bikin hari-hariku penuh warna, penuh tawa, dan kadang bikin aku darah tinggi juga. Semoga di umur yang baru ini kamu makin sehat, makin sukses, dan makin sayang sama aku (ini penting! 😘). Aku bakal terus nemenin kamu sampe kamu nemu pertner seiman kamu yaa, aku bisa jadi partner in crime, temen curhat kamu juga. Pokoknya, aku sayang kamu banget. Terima kasih udah jadi orang yang paling spesial dalam hidup aku. Yuk, kita rayain ulang tahunmu dengan cara yang paling gokil dan berkesan! Love you to the moon and back! 💖🎂🎈',
+      html: `
+        <p>Happy birthday, sayang! 🎉🥳 Gak nyangka ya, kamu udah tambah tua lagi setahun, tapi tenang, kamu masih tetep ganteng kok di mataku, walaupun kadang nyebelin! 😜</p>
+        <p>Aku bersyukur banget punya kamu, yang selalu bikin hari-hariku penuh warna, penuh tawa, dan kadang bikin aku darah tinggi juga.</p>
+        <p>Semoga di umur yang baru ini kamu makin sehat, makin sukses, dan makin sayang sama aku (ini penting! 😘).</p>
+        <p>Aku bakal terus nemenin kamu sampe kamu nemu partner seiman kamu yaa, aku bisa jadi partner in crime, temen curhat kamu juga.</p>
+        <p>Pokoknya, aku sayang kamu banget. Thank u udah jadi orang yang paling spesial dalam hidup aku. Love you my haholongan! 💖🎂🎈</p>
+        <br>
+        <p style="text-align:right; font-style:italic;">Ur Beloved</p>
+      `,
       customClass: {
-      popup: 'my-sweetalert'},
+        popup: 'my-sweetalert'
+      },
       imageUrl: 'assets/wowo.jpg',
       imageWidth: 280,
       imageHeight: 200,
