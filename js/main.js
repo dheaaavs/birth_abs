@@ -139,9 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
   giftBox.addEventListener('click', () => {
     startConfetti();
     Swal.fire({
-      title: 'Surprise!',
       html: `
-        <p>Hepi betdeyyy cayankkuu! 🎉🥳 Hihihi gak kerasa yaaa, kamu udah tambah tua setahuun, tapi tenang ajaa, di mataku kamu tetep ganteng kok, walaupun kadang suka ngeselin bangett! 😜</p>
+        <h2>Haii sayangkuu! 🎉🥳</h2>
+        <p>Happy Birthday Sayangnya Akuu!</p>
+        <p>Hihihi gak kerasa yaaa, kamu udah tambah tua setahuun, tapi tenang ajaa, di mataku kamu tetep ganteng kok, walaupun kadang suka ngeselin bangett! 😜</p>
         <p>Akuu tuh bersyukuur bangeeet punyaa kamu, yang selalu bikin hari-hari aku jadi warna-warni, ketawa-tawaa, kadang bikin akuu emosi jugaa sih, tapi gemesh! 🤭</p>
         <p>Semogaa di umurr yang baruu ini kamu makin sehat, makin sukses, makin sayaaang sama akuu yaaa (ini pentiiing! 😘),</p>
         <p>Aku janji mau terus nemenin kamu sampe kamu nemu partner seimann, akuu bisa jadi partner in crime kamu jugaa, temen curhat jugaa, pokoknya aku setiaaa hihihi 🥰</p>
@@ -156,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       imageUrl: 'assets/dhea.png',
       imageWidth: 280,
       imageHeight: 200,
-      confirmButtonText: 'done!'
+      confirmButtonText: 'Done!'
     });
   });
 });
