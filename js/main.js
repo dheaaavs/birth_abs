@@ -25,9 +25,10 @@ const messages = [
   "Thank you udah hadir di hidup aku 🥰",
   "I love you more everyday 💖"
 ];
-let index = 0;
 
 // Tampilkan surprise dan modal peluk
+let index = 0;
+
 function showSurprise() {
   const audio = document.getElementById("bg-music");
   if (audio.paused) {
@@ -40,15 +41,23 @@ function showSurprise() {
       title: '💌 Pesan Buat Kamu',
       text: messages[index],
       icon: 'success',
-      confirmButtonText: 'Next ❤️'
+      confirmButtonText: 'Next ❤️',
+      customClass: {
+        popup: 'my-sweetalert'
+      }
+    }).then(() => {
+      index++;
+      showSurprise(); // panggil lagi sampai selesai semua pesan
     });
-    index++;
   } else {
     Swal.fire({
       title: '🎉🎉🎉',
       text: 'Peluk aku sekarang dong 🤭❤️',
       icon: 'info',
-      confirmButtonText: 'Siap Sayang 😘'
+      confirmButtonText: 'Siap Sayang 😘',
+      customClass: {
+        popup: 'my-sweetalert'
+      }
     }).then(() => {
       localStorage.setItem("songTime", audio.currentTime);
       showPelukModal();
@@ -112,18 +121,19 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>Happy birthday, sayang! 🎉🥳 Gak nyangka ya, kamu udah tambah tua lagi setahun, tapi tenang, kamu masih tetep ganteng kok di mataku, walaupun kadang nyebelin! 😜</p>
         <p>Aku bersyukur banget punya kamu, yang selalu bikin hari-hariku penuh warna, penuh tawa, dan kadang bikin aku darah tinggi juga.</p>
         <p>Semoga di umur yang baru ini kamu makin sehat, makin sukses, dan makin sayang sama aku (ini penting! 😘).</p>
-        <p>Aku bakal terus nemenin kamu sampe kamu nemu partner seiman kamu yaa, aku bisa jadi partner in crime, temen curhat kamu juga.</p>
+        <p>Aku bakal terus nemenin kamu sampe kamu nemu partner seiman kamu yaa, aku bisa jadi partner in crime hahaha, temen curhat kamu juga.</p>
         <p>Pokoknya, aku sayang kamu banget. Thank u udah jadi orang yang paling spesial dalam hidup aku. Love you my haholongan! 💖🎂🎈</p>
         <br>
         <p style="text-align:right; font-style:italic;">Ur Beloved</p>
+        <p style="text-align:right; font-style:italic;">Dhea</p>
       `,
       customClass: {
         popup: 'my-sweetalert'
       },
-      imageUrl: 'assets/wowo.jpg',
+      imageUrl: 'assets/dhea.png',
       imageWidth: 280,
       imageHeight: 200,
-      confirmButtonText: 'Makasih sayang!'
+      confirmButtonText: 'done!'
     });
   });
 });
@@ -162,3 +172,62 @@ function updateCountdown() {
   document.getElementById('countdown').innerText = `🎂 ${days} hari lagi ke ultah kamu!`;
 }
 setInterval(updateCountdown, 1000);
+
+
+// Loader selesai setelah delay
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').style.display = 'none';
+  }, 2000);
+});
+
+// Play sound saat klik tombol atau gift
+function playClickSound() {
+  const clickSound = document.getElementById("click-sound");
+  clickSound && clickSound.play();
+}
+
+// Tambahkan pemanggilan saat showSurprise
+function showSurprise() {
+  playClickSound(); // 🔊
+  const audio = document.getElementById("bg-music");
+  if (audio.paused) audio.play();
+  startConfetti();
+
+  if (index < messages.length) {
+    Swal.fire({
+      title: '💌 Pesan Buat Kamu',
+      text: messages[index],
+      icon: 'success',
+      confirmButtonText: 'Next ❤️'
+    }).then(() => {
+      index++;
+      showSurprise();
+    });
+  } else {
+    Swal.fire({
+      title: '🎉🎉🎉',
+      text: 'Peluk aku sekarang dong 🤭❤️',
+      icon: 'info',
+      confirmButtonText: 'Siap Sayang 😘'
+    }).then(() => {
+      localStorage.setItem("songTime", audio.currentTime);
+      showPelukModal();
+    });
+  }
+}
+
+// Tampilkan modal peluk + animasi
+function showPelukModal() {
+  const modal = document.getElementById('pelukModal');
+  modal.style.display = 'block';
+  modal.setAttribute('aria-hidden', 'false');
+  document.getElementById('hug-gif').style.display = 'block';
+}
+
+// Tambahan Easter Egg: tekan tombol H
+document.addEventListener('keydown', function(e) {
+  if (e.key.toLowerCase() === 'h') {
+    Swal.fire("Ketauan yaa, kamu pencet tombol rahasia! 😘");
+  }
+});

@@ -74,6 +74,12 @@
 </head>
 <body>
 
+    <!-- Loader -->
+  <div id="loader"><h2>Loading cinta... 💖</h2></div>
+
+  <!-- Tambahan audio klik -->
+  <audio id="click-sound" src="assets/click.mp3" preload="auto"></audio>
+
   <h1>HAPPY BIRTHDAY MY LOVE! 🎉💖</h1>
   <div id="typed"></div>
   <!-- Love Rain Container -->
@@ -82,7 +88,7 @@
   <p id="countdown"></p>
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="assets/wa.png" alt="Kenangan 1" /></div>
+      <div class="swiper-slide"><img src="assets/wa.jpg" alt="Kenangan 1" /></div>
       <div class="swiper-slide"><img src="assets/wi.jpg" alt="Kenangan 2" /></div>
       <div class="swiper-slide"><img src="assets/wu.jpg" alt="Kenangan 3" /></div>
     </div>
@@ -123,6 +129,8 @@
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
 
+      <!-- Tambahan gambar pelukan -->
+      <img id="hug-gif" src="assets/hug.gif" style="display:none;width:200px;margin:auto;" />
       <button class="closeBtn" onclick="closePeluk()">Pelukann</button>
     </div>
   </div>
