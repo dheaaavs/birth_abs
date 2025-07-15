@@ -50,19 +50,42 @@ function showSurprise() {
       showSurprise(); // panggil lagi sampai selesai semua pesan
     });
   } else {
-    Swal.fire({
-      title: '🎉🎉🎉',
-      text: 'Peluk aku sekarang dong 🤭❤️',
-      icon: 'info',
-      confirmButtonText: 'Siap Sayang 😘',
-      customClass: {
-        popup: 'my-sweetalert'
-      }
-    }).then(() => {
+    askForHug(); // Panggil askForHug langsung TANPA else tambahan yang error
+  }
+}
+
+function askForHug() {
+  Swal.fire({
+    title: '🎉🎉🎉',
+    text: 'hug me noww 🤭❤️',
+    icon: 'info',
+    showCancelButton: true,
+    confirmButtonText: 'Siap Sayang 😘',
+    cancelButtonText: 'Gamau 😜',
+    customClass: {
+      popup: 'my-sweetalert',
+      confirmButton: 'btn-gemes',
+      cancelButton: 'btn-gemes-cancel'
+    }
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const audio = document.getElementById("bg-music");
       localStorage.setItem("songTime", audio.currentTime);
       showPelukModal();
-    });
-  }
+    } else {
+      Swal.fire({
+        title: '😢',
+        text: 'Kamu ga sayang aku? Kenapa gamau?',
+        icon: 'question',
+        confirmButtonText: 'Yaudah deh peluk 🥺',
+        customClass: {
+          confirmButton: 'btn-gemes'
+        }
+      }).then(() => {
+        askForHug(); // Loop lagi sampai klik peluk
+      });
+    }
+  });
 }
 
 // Tampilkan modal peluk
@@ -118,11 +141,11 @@ document.addEventListener('DOMContentLoaded', () => {
     Swal.fire({
       title: 'Surprise!',
       html: `
-        <p>Happy birthday, sayang! 🎉🥳 Gak nyangka ya, kamu udah tambah tua lagi setahun, tapi tenang, kamu masih tetep ganteng kok di mataku, walaupun kadang nyebelin! 😜</p>
-        <p>Aku bersyukur banget punya kamu, yang selalu bikin hari-hariku penuh warna, penuh tawa, dan kadang bikin aku darah tinggi juga.</p>
-        <p>Semoga di umur yang baru ini kamu makin sehat, makin sukses, dan makin sayang sama aku (ini penting! 😘).</p>
-        <p>Aku bakal terus nemenin kamu sampe kamu nemu partner seiman kamu yaa, aku bisa jadi partner in crime hahaha, temen curhat kamu juga.</p>
-        <p>Pokoknya, aku sayang kamu banget. Thank u udah jadi orang yang paling spesial dalam hidup aku. Love you my haholongan! 💖🎂🎈</p>
+        <p>Hepi betdeyyy cayankkuu! 🎉🥳 Hihihi gak kerasa yaaa, kamu udah tambah tua setahuun, tapi tenang ajaa, di mataku kamu tetep ganteng kok, walaupun kadang suka ngeselin bangett! 😜</p>
+        <p>Akuu tuh bersyukuur bangeeet punyaa kamu, yang selalu bikin hari-hari aku jadi warna-warni, ketawa-tawaa, kadang bikin akuu emosi jugaa sih, tapi gemesh! 🤭</p>
+        <p>Semogaa di umurr yang baruu ini kamu makin sehat, makin sukses, makin sayaaang sama akuu yaaa (ini pentiiing! 😘),</p>
+        <p>Aku janji mau terus nemenin kamu sampe kamu nemu partner seimann, akuu bisa jadi partner in crime kamu jugaa, temen curhat jugaa, pokoknya aku setiaaa hihihi 🥰</p>
+        <p>Akuu sayaaang kamu bangett, makasii yaa udah jadi orang yang paling spesialldi hidup akuu. Love u my haholongan! 💖🎂🎈</p>
         <br>
         <p style="text-align:right; font-style:italic;">Ur Beloved</p>
         <p style="text-align:right; font-style:italic;">Dhea</p>
@@ -185,36 +208,6 @@ window.addEventListener('load', () => {
 function playClickSound() {
   const clickSound = document.getElementById("click-sound");
   clickSound && clickSound.play();
-}
-
-// Tambahkan pemanggilan saat showSurprise
-function showSurprise() {
-  playClickSound(); // 🔊
-  const audio = document.getElementById("bg-music");
-  if (audio.paused) audio.play();
-  startConfetti();
-
-  if (index < messages.length) {
-    Swal.fire({
-      title: '💌 Pesan Buat Kamu',
-      text: messages[index],
-      icon: 'success',
-      confirmButtonText: 'Next ❤️'
-    }).then(() => {
-      index++;
-      showSurprise();
-    });
-  } else {
-    Swal.fire({
-      title: '🎉🎉🎉',
-      text: 'Peluk aku sekarang dong 🤭❤️',
-      icon: 'info',
-      confirmButtonText: 'Siap Sayang 😘'
-    }).then(() => {
-      localStorage.setItem("songTime", audio.currentTime);
-      showPelukModal();
-    });
-  }
 }
 
 // Tampilkan modal peluk + animasi

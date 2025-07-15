@@ -32,9 +32,9 @@ h1 {
 }
 
 #pelukModal .content h1 {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Poppins', sans-serif;
   font-size: 2.5em;
-  color: #774fe7;
+  color: black;
   margin-bottom: 20px;
 }
 
@@ -164,4 +164,32 @@ button:hover {
 @keyframes popUp {
   from { transform: scale(0.7); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+.btn-gemes {
+  background-color: #ff8cb4 !important;
+  color: white !important;
+  font-size: 1.1em !important;
+  border-radius: 20px !important;
+  padding: 10px 20px !important;
+  box-shadow: 0 4px 8px rgba(255, 140, 180, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-gemes:hover {
+  background-color: #ff6b98 !important;
+}
+
+.btn-gemes-cancel {
+  background-color: #ffd2e1 !important;
+  color: #ff4b6e !important;
+  font-size: 1.05em !important;
+  border-radius: 20px !important;
+  padding: 10px 20px !important;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-gemes-cancel:hover {
+  background-color: #ffb0ca !important;
 }
