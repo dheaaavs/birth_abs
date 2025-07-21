@@ -143,11 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <img src="assets/photobooth.png" style="max-width: 280px; width: 100%; height: auto; display: block; margin: 0 auto;">
         <h2>Haii sayangkuu! 🎉🥳</h2>
         <p>Happy Birthday Sayangnya Akuu!</p>
-        <p>Hihihi gak kerasa yaaa, kamu udah tambah tua setahuun, tapi tenang ajaa, di mataku kamu tetep ganteng kok, walaupun kadang suka ngeselin bangett! 😜</p>
-        <p>Akuu bersyukuur bangeeet punyaa kamu, yang selalu bikin hari-hari aku jadi warna-warni, ketawa-tawaa, kadang bikin akuu emosi jugaa sih, tapi gemesh! 🤭</p>
-        <p>Semogaa di umurr yang baruu ini kamu makin sehat, makin sukses, makin sayaaang sama akuu yaaa (ini pentiiing! 😘),</p>
-        <p>Aku janji mau terus nemenin kamu sampe kamu nemu partner seimann, akuu bisa jadi partner in crime kamu jugaa, temen curhat jugaa, pokoknya aku setiaaa hihihi 🥰</p>
-        <p>Akuu sayaaang kamu bangett, makasii yaa udah jadi orang yang paling spesiall di hidup akuu. Love u my haholongan! 💖🎂🎈</p>
+        <p>ya ampun gak kerasa yaaa, kamu udah tambah tua setahuun, tapi tenang ajaa, di mataku kamu tetep ganteng kok, walaupun kadang suka ngeselin bangett! 😜</p>
+        <p>Akuu bersyukuur bangeeet punyaa kamu karena selalu buat hari-hari aku jadi warna-warni, ketawa-tawaa, nangis juga kalo udah kesel bgt sama kamu, kadang bikin akuu emosi jugaa sih, tapi gemesin! 🤭</p>
+        <p>Semogaa di umurr yang baruu ini kamu makin sehat, makin sukses, makin banyak yang sama kamu dan jangan lupa kamu makin sayaaang sama akuu yaaa (ini pentiiing! 😘),</p>
+        <p>Aku bakalan terus nemenin kamu sampe aku ketemu lee min ho hehe. oiya diinget juga tetap jadikan aku partner curhat kamu, masa aku terus yang curhat sama kamu. jadikan akuu partner in crime kamu ya hahaha, pokoknya aku siap menjadi partner in ur life hihihi 🥰</p>
+        <p>Akuu sayaaang kamu bangett, makasii yaa udah jadi orang yang spesial di hidup akuu. Love u my haholongan! 💖🎂🎈</p>
         <br>
         <p style="text-align:right; font-style:italic;">Ur Beloved</p>
         <p style="text-align:right; font-style:italic;">Dhea</p>
