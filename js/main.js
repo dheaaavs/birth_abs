@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startConfetti();
     Swal.fire({
       html: `
+        <img src="assets/photobooth.png" style="max-width: 280px; width: 100%; height: auto; display: block; margin: 0 auto;">
         <h2>Haii sayangkuu! 🎉🥳</h2>
         <p>Happy Birthday Sayangnya Akuu!</p>
         <p>Hihihi gak kerasa yaaa, kamu udah tambah tua setahuun, tapi tenang ajaa, di mataku kamu tetep ganteng kok, walaupun kadang suka ngeselin bangett! 😜</p>
@@ -154,13 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
       customClass: {
         popup: 'my-sweetalert'
       },
-      imageUrl: 'assets/dhea.png',
-      imageWidth: 280,
-      imageHeight: 200,
       confirmButtonText: 'Done!'
     });
   });
 });
+
 
 // Background Music autoplay fix
 document.addEventListener("DOMContentLoaded", function() {
