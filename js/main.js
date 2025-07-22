@@ -189,20 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-function updateCountdown() {
-  const now = new Date();
-  const nextBirthday = new Date(now.getFullYear(), 6, 23); // 23 Juli tahun ini
-  // Kalau ultah-nya udah lewat tahun ini, set ke tahun depan
-  if (now > nextBirthday) {
-    nextBirthday.setFullYear(now.getFullYear() + 1);
-  }
-  const diff = nextBirthday - now;
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById('countdown').innerText = `🎂 ${days} hari lagi ke ultah kamu!`;
-}
-setInterval(updateCountdown, 1000);
-
-
 // Loader selesai setelah delay
 window.addEventListener('load', () => {
   setTimeout(() => {
